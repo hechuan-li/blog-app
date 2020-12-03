@@ -3,14 +3,46 @@
 		{
 			"path": "pages/index/index",
 			"style": {
-				"navigationBarTitleText": "uni-app"
+				"backgroundColor": "#05d0aa"
+				
 			}
 		}
-	],
+	    ,{
+            "path" : "pages/login/login",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "Login",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/aricleDetail/aricleDetail",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+    ],
 	"globalStyle": {
-		"navigationBarTextStyle": "black",
-		"navigationBarTitleText": "uni-app",
-		"navigationBarBackgroundColor": "#F8F8F8",
-		"backgroundColor": "#F8F8F8"
+		"navigationBarTextStyle": "white",
+		"navigationBarTitleText": "Dan's Blog",
+		"navigationBarBackgroundColor": "#0f526d",
+		"backgroundColor": "#05d0aa"
+	},
+	"tabBar":{
+		"color":"#b3eeee",
+		"selectedColor":"#05d0aa",
+		"backgroundColor":"#0f526d",
+		"list":[{
+			"pagePath":"pages/index/index",
+			"text":"Home"
+		},
+		{
+			"pagePath":"pages/login/login",
+			"text":"Login"
+		}]
 	}
 }

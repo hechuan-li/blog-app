@@ -1,49 +1,58 @@
 <template>
 	<view class="content">
-		<image class="logo" src="/static/logo.png"></image>
-		<view>
-			<text class="title">{{title}}</text>
+		<view class="content-list" v-for="item in articles" :key='item.id' @click="clickArticle(item.id)">
+			<uni-card :title="item.title"
+				:extra="item.publish_date.substr(0,10)" 
+				:is-shadow="true">
+			    {{item.content.substr(0,100)}}
+			</uni-card>
 		</view>
 	</view>
 </template>
 
 <script>
+		import uniCard from '@/components/uni-card/uni-card.vue'
 	export default {
+		components: {
+					 uniCard
+					 },
 		data() {
 			return {
-				title: 'Hello'
+				articles:[]
 			}
 		},
 		onLoad() {
-
+			this.getArticleList()
 		},
 		methods: {
-
+			getArticleList(){
+				uni.request({
+				    url: "http://18.219.200.138:3001/api/article/allArticle",
+				    success: (res) => {
+				        // console.log(res.data);
+				        this.articles = res.data.list
+				    }
+				});
+			},
+			clickArticle(id){
+				console.log(id);
+				uni.navigateTo({
+					url:"../aricleDetail/aricleDetail?id="+id,
+					
+				})
+			}
 		}
 	}
 </script>
 
-<style>
-	.content {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: center;
+<style scoped lang="scss">
+	.content{
+		width:750rpx;
+		
+		&-list{
+			width: 100%;
+			flex-flow: column nowrap;
+		}
 	}
-
-	.logo {
-		height: 200rpx;
-		width: 200rpx;
-		margin: 200rpx auto 50rpx auto;
-	}
-
-	.text-area {
-		display: flex;
-		justify-content: center;
-	}
-
-	.title {
-		font-size: 36rpx;
-		color: #8f8f94;
-	}
+	
 </style>
