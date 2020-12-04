@@ -12,7 +12,8 @@
 	}
 </script>
 
-<style>
+<style lang="scss">
+	@import "uview-ui/index.scss";
 	/*每个页面公共css */
 	.wrapper{
 		margin:0;
@@ -23,5 +24,8 @@
 		overflow-x: hidden;
 		overflow-y: hidden;
 		scrollbar-width: none;
+		font-family: abcsans,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
 	}
 </style>
