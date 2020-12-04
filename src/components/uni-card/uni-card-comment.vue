@@ -169,10 +169,10 @@
 		display: flex;
 		/* #endif */
 		flex-direction: column;
-		justify-content: center;
+		justify-content: space-between;
 		padding-left: 10px;
 		height: 40rpx;
-		overflow: hidden;
+		// overflow: hidden;
 
 
 	}
@@ -184,7 +184,7 @@
 	}
 
 	.uni-card__title-content-extra {
-		font-size: 26rpx;
+		font-size: 20rpx;
 		line-height: 35rpx;
 		color: #999;
 	}
@@ -209,11 +209,11 @@
 		flex-direction: row;
 		margin-right: $uni-spacing-col-base;
 		justify-content: flex-start;
-		align-items: center;
+		// align-items: center;
 	}
 
 	.uni-card__header-title-text {
-		font-size: $uni-font-size-lg;
+		font-size: 20rpx;
 		flex: 1;
 		/* #ifndef APP-NVUE */
 		white-space: nowrap;
