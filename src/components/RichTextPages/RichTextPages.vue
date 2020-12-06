@@ -62,7 +62,7 @@
 	
 	&-content{
 		width: 90%;
-		margin: 20rpx auto;
+		margin: 80rpx auto;
 		.u-content {
 			font-size: 16rpx;
 				
@@ -75,7 +75,7 @@
 	.line{
 		width: 90%;
 		margin: 20rpx auto;
-		border: 1rpx solid #999;
+		border: 1rpx solid #0f526d;
 		border-radius: 1rpx;
 	}
 }

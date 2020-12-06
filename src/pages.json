@@ -20,7 +20,7 @@
             "path" : "pages/aricleDetail/aricleDetail",
             "style" :                                                                                    
             {
-                "navigationBarTitleText": "",
+                "navigationBarTitleText": "Articles",
                 "enablePullDownRefresh": false
             }
             

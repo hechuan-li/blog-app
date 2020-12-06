@@ -1,10 +1,30 @@
 <template>
 	<view>
+		<!-- article part -->
 		<RichTextPages :articles='articleInfo'></RichTextPages>
-		<text>go login</text>
-		<text>
+		
+		<!-- divider -->
+		<u-divider color="#0f526d" half-width="270" border-color="#0f526d">comment</u-divider>
+		
+		<!-- login page redirect part -->
+		<text v-if="loginStatus === 0">Login to comment</text>
+		
+		<!-- comments type in part -->
+		<view class="comment-input" v-else>
+			<textarea class="comment-input-text"/>
+			<view class="comment-input-button">
+				<u-button shape="square" 
+					:ripple="true" 
+					ripple-bg-color="#909399"  
+					type='primary' 
+					:onclick='submitComment'>Submit</u-button>
+			</view>
+		</view>
+		
+		<!-- comments part -->
+		<view>
 			<Comments :comments='commentInfo'></Comments>
-		</text>
+		</view>
 	</view>
 </template>
 
@@ -25,7 +45,9 @@
 					author:'',
 					content:""
 				},
-				commentInfo:[]
+				commentInfo:[],
+				loginStatus: Number,
+				comment_content:''
 			};
 		},
 		onLoad(Options) {
@@ -33,6 +55,8 @@
 			this.articleId = Options.id
 			this.getDetail(Options.id)
 			this.getCommentList(Options.id)
+			this.loginStatus = this.$store.state.isSignIn
+			console.log(this.loginStatus);
 			
 		},
 		methods:{
@@ -57,11 +81,47 @@
 					console.log(res);
 					this.commentInfo = res.data.list
 				})
+			},
+			submitComment(){
+			// 	this.$http.post('api/comment/public',{
+   //      params:{
+   //        article_id:this.articleId,
+   //        content: this.comment_content,
+   //        user_id: this.userInfo.id,
+   //        head_img:this.userInfo.head_img,
+   //        nickname: this.userInfo.nickname
+   //      }
+   //    }).then(res=>{
+   //      if(res.data.code === 0){
+   //        console.log('post success')
+        
+   //      }
+   //    })
 			}
 		}
 	}
 </script>
 
 <style lang="scss">
-
+.comment-input{
+	padding: 30rpx;
+	text-align: center;
+	
+	&-text{
+		width: 90%;
+		height: 200rpx;
+		margin: 0 auto;
+		padding: 26rpx;
+		border: 1px solid #0f526d;
+	}
+	
+	&-button{
+		width: 50%;
+		height: 60rpx;
+		margin: 30rpx auto;
+		
+	}
+	
+	
+}
 </style>

@@ -6,7 +6,7 @@
 		    :title="item.nickname" 
 		    mode="title" 
 		    :is-shadow="true" 
-		    :thumbnail="item.head_img" 
+		    :thumbnail="item.head_img === null ? defaultHeadImg : item.head_img" 
 		    :extra="item.publish_time" 
 		>
 		    {{item.cm_content}}
@@ -21,6 +21,7 @@
 		props:['comments'],
 		data() {
 			return {
+				defaultHeadImg: 'http://18.219.200.138:3001/uploads/1607252832831.jpg'
 				
 			};
 		}
