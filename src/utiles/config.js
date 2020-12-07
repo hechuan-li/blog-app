@@ -23,7 +23,7 @@ api.setConfig((config) => { /* 设置全局配置 */
 
 //请求前拦截，用来动态加参,例如token
 api.interceptors.request.use((config) => { // 可使用async await 做异步操作
-  config.baseURL = apiBaseUrl
+
   config.header = {
     ...config.header,
     token:uni.getStorageSync('token')

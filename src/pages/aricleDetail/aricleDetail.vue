@@ -1,5 +1,5 @@
 <template>
-	<view>
+	<view >
 		<!-- article part -->
 		<RichTextPages :articles='articleInfo'></RichTextPages>
 		

@@ -1,5 +1,5 @@
 <template>
-	<view class="content">
+	<view class="content ">
 		<view class="content-list" v-for="item in articles" :key='item.id' @click="clickArticle(item.id)">
 			<uni-card :title="item.title"
 				:extra="item.publish_date.substr(0,10)" 

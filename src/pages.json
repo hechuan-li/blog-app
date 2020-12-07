@@ -25,6 +25,33 @@
             }
             
         }
+        ,{
+            "path" : "pages/singUp/singUp",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "Create Account",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/users/users",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "Users",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/my-articles/my-articles",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
     ],
 	"globalStyle": {
 		"navigationBarTextStyle": "white",
@@ -39,10 +66,13 @@
 		"list":[{
 			"pagePath":"pages/index/index",
 			"text":"Home"
+		},{
+			"pagePath":"pages/my-articles/my-articles",
+			"text":"MyArticle"
 		},
 		{
-			"pagePath":"pages/login/login",
-			"text":"Login"
+			"pagePath":"pages/users/users",
+			"text":"User"
 		}]
 	},
 	"easycom": {
