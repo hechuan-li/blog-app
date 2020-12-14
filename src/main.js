@@ -10,7 +10,8 @@ Vue.use(uView);
 
 
 Vue.prototype.$http = http
-Vue.prototype.$api = api
+
+
 
 Vue.config.productionTip = false
 

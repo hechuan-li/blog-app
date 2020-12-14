@@ -47,7 +47,7 @@
             "path" : "pages/my-articles/my-articles",
             "style" :                                                                                    
             {
-                "navigationBarTitleText": "",
+                "navigationBarTitleText": "My Articles",
                 "enablePullDownRefresh": false
             }
             

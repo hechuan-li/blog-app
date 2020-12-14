@@ -7,6 +7,7 @@
 			    {{item.content.substr(0,100)}}
 			</uni-card>
 		</view>
+		<u-back-top :scroll-top="scrollTop"></u-back-top>
 	</view>
 </template>
 
@@ -18,7 +19,8 @@
 					 },
 		data() {
 			return {
-				articles:[]
+				articles:[],
+				scrollTop: 0
 			}
 		},
 		onLoad() {
@@ -40,7 +42,10 @@
 					url:"../aricleDetail/aricleDetail?id="+id,
 					
 				})
-			}
+			},
+			onPageScroll(e) {
+					this.scrollTop = e.scrollTop;
+				}
 		}
 	}
 </script>

@@ -6,7 +6,8 @@ Vue.use(Vuex);
 export default new Vuex.Store({
   state: {
     isSignIn: 0,
-    token: ''
+    token: '',
+		username:''
   },
   mutations: {
     changeSignState(state,n) {
@@ -14,7 +15,10 @@ export default new Vuex.Store({
     },
     setToken(state,token) {
       state.token = token
-    }
+    },
+		setUser(state, username){
+			state.username = username
+		}
 
   },
   // actions: {

@@ -8,7 +8,7 @@
 
 			</view>
 			<view class="login-button">
-								<button type="default" class="debounce" @click="$u.debounce(singUpButton, 500)">Sing Up</button>
+				<button type="default" class="debounce" @click="$u.debounce(singUpButton, 500)">Sing Up</button>
 				<button type="default" class="debounce" @click="$u.debounce(loginButton, 500)">Login</button>
 
 
@@ -75,27 +75,32 @@
 							})
 						} else if (status.code === 0) {
 							//登陆成功时
-							uni.setStorageSync('token', status.token)
-							uni.setStorageSync('user_id',status.user_id)
-							uni.setStorageSync('username',status.username)
 							
+							//save data at local
+							uni.setStorageSync('token', status.token)
+							uni.setStorageSync('user_id', status.user_id)
+							uni.setStorageSync('username', status.username)
+							
+							//save data at vuex
+							this.$store.commit("setToken", status.token);
+							this.$store.commit("changeSignState", 1)
+							this.$store.commit('setUser', status.username)
+							
+							//success notification
 							this.$refs.uTips.show({
 								title: status.msg,
 								type: 'success',
 								duration: '1000'
 							})
 							
-							// Cookie.set("username", status.username);
-							// Cookie.set("head_img", status.head_img);
-							// Cookie.set("user_id", status.user_id);
-							this.$store.commit("setToken", status.token);
-							sessionStorage.setItem("username", status.username);
-							setTimeout(() => {
-								this.loading = false;
-								this.$store.commit("changeSignState", 1);
-								this.$router.push("/");
-							}, 500);
-							this.show2 = false
+							//jump to home page
+							setTimeout(()=>{
+								uni.switchTab({
+									url:'../index/index',
+								})
+							},1000)
+							
+							
 						} else if (status.code === "-2") {
 							alert(status.msg);
 						}

@@ -36,4 +36,13 @@
 		text-decoration: none;
 		
 	}
+	button {
+		width: 250rpx;
+		height: 80rpx;
+		border-radius: 40rpx;
+		background: #0f526d;
+		color: #05d0aa;
+		text-align: center;
+		line-height: 2.2;
+	}
 </style>

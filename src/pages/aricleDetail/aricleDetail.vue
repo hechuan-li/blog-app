@@ -1,5 +1,5 @@
 <template>
-	<view >
+	<view class="articles-wrapper">
 		<!-- article part -->
 		<RichTextPages :articles='articleInfo'></RichTextPages>
 		
@@ -103,6 +103,9 @@
 </script>
 
 <style lang="scss">
+	.articles-wrapper{
+		padding: 30rpx 0;
+	}
 .comment-input{
 	padding: 30rpx;
 	text-align: center;

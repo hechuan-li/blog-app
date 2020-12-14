@@ -64,7 +64,7 @@
 		width: 90%;
 		margin: 80rpx auto;
 		.u-content {
-			font-size: 16rpx;
+			font-size: 26rpx;
 				
 				text-indent: 30rpx;
 				text-align:justify;
